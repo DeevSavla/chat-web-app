@@ -1,23 +1,23 @@
-import express from 'express'
-import { config } from 'dotenv'
-import { connectDB } from './config/database.js'
-import cors from 'cors'
+import express from "express";
+import { config } from "dotenv";
+import { connectDB } from "./config/database.js";
+import cors from "cors";
 
-config()
+config();
 
-connectDB()
+connectDB();
 
-const app = express()
+const app = express();
 
-const port = process.env.PORT
+const port = process.env.PORT;
 
-app.use(cors())
-app.use(express.urlencoded(true))
+app.use(cors());
+app.use(express.urlencoded(true));
 
-app.use('/',(req,res)=>{
-    console.log('Hello')
-})  
+app.use("/", (req, res) => {
+  console.log("Hello");
+});
 
-app.listen(port,()=>{
-    console.log(`Server running at port ${port}.`)
-})
+app.listen(port, () => {
+  console.log(`Server running at port ${port}.`);
+});
